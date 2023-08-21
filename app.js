@@ -1,20 +1,16 @@
 const imagesRouter = require('./routes/images')
-
+const productsInfo = require('./models/products')
 const express = require('express')
 
 const app = express()
-
-function getCards(){
-    return [{id: 1, name: 'card 1'}, {id: 2, name: 'card 2'}]
-}
 
 app.get('/', function(req, res){//return the cards 
     const cards = getCards()
 
     let divs = ''
     for (let i = 0; i < cards.length; i++){//sum of all cards
-        const card = '<div>card number' +i+ '</div>';
-        divs += card
+        const product = productsInfo.getProductsInfo()
+        divs += product
     }
     
     // res.end(`<html>
