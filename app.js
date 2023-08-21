@@ -1,28 +1,10 @@
-const imagesRouter = require('./routes/images')
-const productsInfo = require('./models/products')
+const productsRouter = require('./routes/products')
 const express = require('express')
 
 const app = express()
 
-app.get('/', function(req, res){//return the cards 
-    const cards = getCards()
+//app.use(express.static('public'))
 
-    let divs = ''
-    for (let i = 0; i < cards.length; i++){//sum of all cards
-        const product = productsInfo.getProductsInfo()
-        divs += product
-    }
-    
-    // res.end(`<html>
-    //         <body>
-    //         ${divs}
-    //         </body>
-    //     <html>`)
-    res.render('products.ejs', {})
-})
-
-app.use(express.static('public'))
-
-app.use('/', imagesRouter)
+app.use('/', productsRouter) //for every request, use productsRouter
 
 app.listen(8800)
