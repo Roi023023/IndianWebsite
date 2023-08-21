@@ -1,4 +1,5 @@
-export function getProductsInfo(){
+exports.getProductsInfo = function() {
     return [{id: 1, name: 'card 1'}, 
             {id: 2, name: 'card 2'}]
 }
+
