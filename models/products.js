@@ -1,4 +1,14 @@
-export function getProductsInfo(){
-    return [{id: 1, name: 'card 1'}, 
-            {id: 2, name: 'card 2'}]
+const products = [
+    {id : 57, name : 'bar.jpg'},
+    {id : 103, name : '2.png'}
+]
+
+exports.getProductsInfo = () => {
+    return images
+}
+
+exports.getProduct = (id) => {
+    return images.filter(function(item){
+        return item.id == id
+    })[0]
 }
